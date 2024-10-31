@@ -72,7 +72,7 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 
     protected void openConnection() {
         entityManagerFactory =
-                Persistence.createEntityManagerFactory("JPA");
+                Persistence.createEntityManagerFactory("Postgre1");
         entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
     }

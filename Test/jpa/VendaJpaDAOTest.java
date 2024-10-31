@@ -261,12 +261,12 @@ public class VendaJpaDAOTest {
         assertNotNull(venda);
         assertEquals(codigoVenda, venda.getCodigo());
 
-        venda.setStatus(Status.CONCLUIDA);
+        venda.setStatus(VendaJpa.Status.CONCLUIDA);
         vendaDao.finalizarVenda(venda);
 
         VendaJpa vendaConsultada = vendaDao.consultarComCollection(venda.getId());
         assertEquals(venda.getCodigo(), vendaConsultada.getCodigo());
-        assertEquals(Status.CONCLUIDA, vendaConsultada.getStatus());
+        assertEquals(VendaJpa.Status.CONCLUIDA, vendaConsultada.getStatus());
 
         vendaConsultada.adicionarProduto(this.produto, 1);
 
